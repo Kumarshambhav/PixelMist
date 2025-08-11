@@ -28,7 +28,7 @@ mongoose
 const app = express();
 
 const allowedOrigins = [
-  CLIENT_URL,
+  "https://pixel-mist.vercel.app/",
   "http://localhost:3000"
 ];
 
