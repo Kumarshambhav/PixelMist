@@ -10,7 +10,7 @@ export default function Register() {
     e.preventDefault();
     try {
       await axios.post("/api/register", form);
-      navigate("/feed");
+      navigate("/login");
     } catch (err) {
       alert(err.response?.data?.error || "Error");
     }
