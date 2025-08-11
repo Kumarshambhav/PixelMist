@@ -27,12 +27,21 @@ mongoose
 
 const app = express();
 
-app.use(
-  cors({
-    origin: CLIENT_URL,
-    credentials: true
-  })
-);
+const allowedOrigins = [
+  CLIENT_URL,
+  "http://localhost:3000"
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}));
 app.use(express.json());
 app.use(cookieParser());
 
