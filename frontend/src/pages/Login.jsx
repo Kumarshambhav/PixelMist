@@ -25,7 +25,7 @@ export default function Login() {
         </form>
         <button
           onClick={() => navigate("/register")}
-          className="flex items-center gap-2 mt-2 p-3 bg-indigo-600 text-white rounded">Register</button>
+          className="gap-2 mt-2 p-3 bg-indigo-600 text-white rounded">Register</button>
       </div>
     </div>
   );
