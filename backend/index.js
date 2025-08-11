@@ -26,20 +26,10 @@ mongoose
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 const app = express();
-
-const allowedOrigins = [CLIENT_URL];
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true
-}));
+
 
 function generateToken(id) {
   return jwt.sign({ id }, JWT_SECRET, { expiresIn: "1d" });
