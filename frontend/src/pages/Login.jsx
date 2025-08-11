@@ -23,6 +23,9 @@ export default function Login() {
           <input name="password" type="password" placeholder="Password" required onChange={(e)=>setForm({...form,password:e.target.value})} className="p-3 rounded bg-slate-100 dark:bg-slate-700"/>
           <button className="mt-2 p-3 bg-indigo-600 text-white rounded">Login</button>
         </form>
+        <button
+          onClick={() => navigate("/register")}
+          className="flex items-center gap-2 mt-2 p-3 bg-indigo-600 text-white rounded">Register</button>
       </div>
     </div>
   );
