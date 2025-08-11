@@ -27,11 +27,9 @@ mongoose
 
 const app = express();
 
-const allowedOrigins = [
-  "https://pixel-mist.vercel.app/",
-  "http://localhost:3000"
-];
-
+const allowedOrigins = [CLIENT_URL];
+app.use(express.json());
+app.use(cookieParser());
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -42,8 +40,6 @@ app.use(cors({
   },
   credentials: true
 }));
-app.use(express.json());
-app.use(cookieParser());
 
 function generateToken(id) {
   return jwt.sign({ id }, JWT_SECRET, { expiresIn: "1d" });
