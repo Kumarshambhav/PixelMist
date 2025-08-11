@@ -11,7 +11,7 @@ import Post from "./models/Post.js";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT ;
 const MONGO_URI = process.env.MONGO_URI;
 const JWT_SECRET = process.env.JWT_SECRET || "devsecret";
 const CLIENT_URL = process.env.CLIENT_URL || "https://pixel-mist.vercel.app/";
