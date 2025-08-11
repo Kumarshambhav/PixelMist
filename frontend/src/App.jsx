@@ -23,7 +23,7 @@ function App() {
     <ThemeContext.Provider value={{ dark, setDark }}>
       <Router>
         <Routes>
-          <Route path="/" element={<Navigate to="/register" />} />
+          <Route path="/" element={<Register/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/feed" element={<Feed />} />
