@@ -13,9 +13,8 @@ dotenv.config();
 
 const PORT = process.env.PORT ;
 const MONGO_URI = process.env.MONGO_URI;
-const JWT_SECRET = process.env.JWT_SECRET || "devsecret";
-const CLIENT_URL = process.env.CLIENT_URL || "https://pixel-mist.vercel.app/";
-
+const JWT_SECRET = process.env.JWT_SECRET ;
+const CLIENT_URL = process.env.CLIENT_URL ;
 if (!MONGO_URI) {
   console.error("Error: MONGO_URI not set in .env");
   process.exit(1);
@@ -287,7 +286,7 @@ app.post("/api/posts/:id/comment", authMiddleware, async (req, res) => {
 });
 
 /** ---------- START SERVER ---------- */
-app.listen(PORT,"0.0.0.0", () => console.log(`🚀 Server running on port ${PORT}`));
+app.listen(PORT, "0.0.0.0" , () => console.log(`🚀 Server running on port ${PORT}`));
 
 
 
