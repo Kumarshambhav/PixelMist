@@ -14,7 +14,7 @@ dotenv.config();
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI;
 const JWT_SECRET = process.env.JWT_SECRET || "devsecret";
-const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
+const CLIENT_URL = process.env.CLIENT_URL || "https://pixel-mist.vercel.app/";
 
 if (!MONGO_URI) {
   console.error("Error: MONGO_URI not set in .env");
