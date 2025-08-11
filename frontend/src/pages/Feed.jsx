@@ -32,10 +32,10 @@ export default function Feed() {
     e.preventDefault();
     try {
       if (editing) {
-        await axios.put(`/api/posts/${editing._id}`, { content });
+        await axios.put(`/api/posts/${editing._id}`, { content },{withCredentials: true});
         setEditing(null);
       } else {
-        await axios.post("/api/posts", { content });
+        await axios.post("/api/posts", { content },{withCredentials: true});
       }
       setContent("");
       setCreating(false);
@@ -54,7 +54,7 @@ export default function Feed() {
 
   const toggleLike = async (id) => {
     try {
-      await axios.post(`/api/posts/${id}/like`);
+      await axios.post(`/api/posts/${id}/like`,{withCredentials: true});
       fetchPosts();
     } catch (err) {
       console.error(err);
@@ -65,7 +65,7 @@ export default function Feed() {
     try {
       const text = commentInputs[id];
       if (!text.trim()) return;
-      await axios.post(`/api/posts/${id}/comment`, { text });
+      await axios.post(`/api/posts/${id}/comment`, { text },{withCredentials: true});
       setCommentInputs(prev => ({ ...prev, [id]: "" }));
       fetchPosts();
     } catch (err) {
