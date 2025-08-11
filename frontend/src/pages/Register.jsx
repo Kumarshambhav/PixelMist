@@ -9,7 +9,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/register", form);
+      await axios.post("/api/register", form ,{withCredentials: true});
       navigate("/login");
     } catch (err) {
       alert(err.response?.data?.error || "Error");
