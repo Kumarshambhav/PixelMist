@@ -14,6 +14,7 @@ dotenv.config();
 const PORT = process.env.PORT ;
 const MONGO_URI = process.env.MONGO_URI;
 const JWT_SECRET = process.env.JWT_SECRET ;
+const CLIENT_URL = process.env.CLIENT_URL
 
 if (!MONGO_URI) {
   console.error("Error: MONGO_URI not set in .env");
@@ -26,7 +27,12 @@ mongoose
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: CLIENT_URL,
+    credentials: true
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 
