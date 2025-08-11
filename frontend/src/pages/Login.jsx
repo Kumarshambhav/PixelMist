@@ -9,7 +9,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/login", {method:"POST" , form);
+      await axios.post("/api/login", form);
       navigate("/feed");
     } catch (err) { alert(err.response?.data?.error || "Error"); }
   };
