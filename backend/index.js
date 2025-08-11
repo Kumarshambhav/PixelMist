@@ -14,7 +14,7 @@ dotenv.config();
 const PORT = process.env.PORT ;
 const MONGO_URI = process.env.MONGO_URI;
 const JWT_SECRET = process.env.JWT_SECRET ;
-const CLIENT_URL = process.env.CLIENT_URL ;
+
 if (!MONGO_URI) {
   console.error("Error: MONGO_URI not set in .env");
   process.exit(1);
