@@ -6,7 +6,7 @@ import Feed from "./pages/Feed";
 import Profile from "./pages/Profile";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL = "https://pixelmist.onrender.com";
 axios.defaults.withCredentials = true;
 
 export const ThemeContext = React.createContext();
