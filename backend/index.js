@@ -159,8 +159,7 @@ app.post("/api/posts", authMiddleware, async (req, res) => {
       .populate("author", "username avatarUrl")
       .populate("comments.user", "username avatarUrl");
 
-    res.status(201).json({populated});
-    res.send({populated})
+    res.status(201).json(populated);
   } catch (err) {
     console.error("Create post error:", err);
     res.status(500).json({ error: "Server error" });
